@@ -24,4 +24,5 @@ class System {
 	navigator = window.navigator;
 	settings = new Settings;
 	audio = new AudioManager;
+	path = Filer.path;
 };

@@ -22,7 +22,7 @@ The last time I tried to make something like this ([available here](https://gith
 	- [ ] Volume control
 	- [ ] Date/Time
 - [ ] Start menu
-- [ ] File system (BrowserFS)
+- [x] File system ([Filer](https://github.com/filerjs/filer))
 - [ ] Protocol management
 - [x] Audio manager
 - [x] Wallpapers
