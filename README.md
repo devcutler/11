@@ -10,15 +10,32 @@ The last time I tried to make something like this ([available here](https://gith
 - [ ] Login
 - [ ] Window manager
 - [ ] Taskbar
+	- [ ] Apps
+		- [ ] Button API
+		- [ ] Start menu button
+	- [ ] [Notification area](https://devblogs.microsoft.com/oldnewthing/20030910-00/?p=42583)
+		- [ ] Notifications
+		- [ ] Volume
+		- [ ] Date/Time
 - [ ] Flyouts
+	- [ ] Notifications
+	- [ ] Volume control
+	- [ ] Date/Time
+- [ ] Start menu
 - [ ] File system (BrowserFS)
+- [ ] Protocol management
 - [x] Audio manager
 - [x] Wallpapers
 - [x] Acrylic ([mostly.](https://docs.microsoft.com/en-us/windows/apps/design/style/acrylic))
-- [ ] "Native apps"
-- [ ] Terminal emulator (Xterm)
 - [ ] System settings
-- [ ] Notifications
+- [ ] "Native apps"
+	- [ ] Terminal emulator ([Xterm.js](https://xtermjs.org/))
+	- [ ] File explorer
+	- [ ] Notepad
+	- [ ] Settings
+	- [ ] Media player
+	- [ ] Code editor ([github1s](https://github1s.com/))
+	- [ ] Rich text editor ([editor.js](https://editorjs.io/))
 - [ ] First-time setup
 
 ### Copyright statement
