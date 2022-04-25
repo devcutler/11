@@ -12,12 +12,17 @@ The last time I tried to make something like this ([available here](https://gith
 - [ ] Taskbar
 - [ ] Flyouts
 - [ ] File system (BrowserFS)
+- [ ] Protocol management
 - [x] Audio manager
 - [x] Wallpapers
 - [x] Acrylic ([mostly.](https://docs.microsoft.com/en-us/windows/apps/design/style/acrylic))
-- [ ] "Native apps"
-- [ ] Terminal emulator (Xterm)
 - [ ] System settings
+- [ ] "Native apps"
+	- [ ] Terminal emulator (Xterm)
+	- [ ] File explorer
+	- [ ] Notepad
+	- [ ] Settings
+	- [ ] Media player
 - [ ] Notifications
 - [ ] First-time setup
 
