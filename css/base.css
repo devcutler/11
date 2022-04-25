@@ -1,0 +1,22 @@
+body {
+	--wallpaper: url('../images/wplight.jpg');
+}
+
+body.dark {
+	--wallpaper: url('../images/wpdark.jpg');
+}
+
+body {
+	background-image: var(--wallpaper);
+	background-size: cover;
+	background-position: center;
+	overflow: hidden;
+}
+
+#taskbar {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 48px;
+}

@@ -1,0 +1,29 @@
+body {
+	--acrylic-background-color: #F7F7F7CC;
+	--acrylic-border-color: #e5e5e5;
+}
+
+body.dark {
+	--acrylic-color: white;
+	--acrylic-background-color: #181818a8;
+	--acrylic-border-color: #1a1a1a1a;
+}
+
+.acrylic {
+	color: var(--acrylic-color);
+	background-color: var(--acrylic-background-color);
+	border-color: var(--acrylic-border-color);
+	overflow: hidden;
+}
+
+.acrylic:before {
+	background-image: url('noise.png');
+	background-repeat: repeat;
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	right: -10px;
+	bottom: -10px;
+	backdrop-filter: blur(4px);
+	content: "";
+}
