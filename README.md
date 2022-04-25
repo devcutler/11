@@ -12,7 +12,7 @@ The last time I tried to make something like this ([available here](https://gith
 - [ ] Taskbar
 - [ ] Flyouts
 - [ ] File system (BrowserFS)
-- [ ] Audio manager
+- [x] Audio manager
 - [x] Wallpapers
 - [x] Acrylic ([mostly.](https://docs.microsoft.com/en-us/windows/apps/design/style/acrylic))
 - [ ] "Native apps"

@@ -23,4 +23,5 @@ class Settings {
 class System {
 	navigator = window.navigator;
 	settings = new Settings;
+	audio = new AudioManager;
 };
