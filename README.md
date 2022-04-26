@@ -24,6 +24,7 @@ The last time I tried to make something like this ([available here](https://gith
 - [ ] Start menu
 - [x] File system ([Filer](https://github.com/filerjs/filer))
 - [ ] Protocol management
+- [x] Network
 - [x] Audio manager
 - [x] Wallpapers
 - [x] Acrylic ([mostly.](https://docs.microsoft.com/en-us/windows/apps/design/style/acrylic))
@@ -41,4 +42,11 @@ The last time I tried to make something like this ([available here](https://gith
 ### Copyright statement
 <sup>
 I do not own, claim, or have any type of hold over Microsoft's copyrights. They own everything related to Windows 11, including but not limited to logos, icons, and design principles. I aim solely to create this project as a proof-of-concept, not to claim ownership over any copyrights. The LICENSE file applies only to any original code I create myself or use from other public-domain or non-restrictive sources.
+
+If you have a copyright issue with any of the contents of this repository, send me an email [arynthernium@gmail.com](mailto:arynthernium@gmail.com)
 </sup>
+
+### Open-source
+- Filer (https://filer.js.org/)
+- OfflineJS (https://www.npmjs.com/package/offline-js)
+- css.gg (https://css.gg)
