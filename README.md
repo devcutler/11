@@ -26,7 +26,7 @@ The last time I tried to make something like this ([available here](https://gith
 	- [ ] Notification area
 	- [ ] Start menu
 - [x] File system ([Filer](https://github.com/filerjs/filer))
-- [ ] Segoe UI + iconography
+- [x] Segoe UI font
 - [ ] Protocol management
 - [x] Network
 - [x] Audio manager
