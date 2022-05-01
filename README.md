@@ -22,7 +22,11 @@ The last time I tried to make something like this ([available here](https://gith
 	- [ ] Volume control
 	- [ ] Date/Time
 - [ ] Start menu
+	- [ ] Taskbar
+	- [ ] Notification area
+	- [ ] Start menu
 - [x] File system ([Filer](https://github.com/filerjs/filer))
+- [ ] Segoe UI + iconography
 - [ ] Protocol management
 - [x] Network
 - [x] Audio manager
