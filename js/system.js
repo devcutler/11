@@ -1,9 +1,39 @@
 class Settings {
+	static defaultConfig = {
+		darkMode: true
+	};
+	load() {
+		window.SYSTEM.fs.readFile('/.config/settings.json', 'utf-8', function (err, data) {
+			if (err) throw err;
+			const newsettings = JSON.parse(data.toString());
+			Object.keys(newsettings).forEach(key => {
+				if (newsettings.hasOwnProperty(key)) {
+					window.SYSTEM.settings[key] = newsettings[key];
+				} else {
+					Object.defineProperty(window.SYSTEM.settings, key, {
+						get() {
+							return this.raw[key];
+						},
+						set(value) {
+							this.raw[key] = value;
+						}
+					});
+					window.SYSTEM.settings.raw[key] = newsettings[key];
+				};
+			});
+		});
+
+	};
+	save() {
+		window.SYSTEM.fs.writeFile('/.config/settings.json', JSON.stringify(this.raw), function (err) {
+			if (err) throw err;
+		});
+	};
 	// this will store all the settings in this object
 	// however, some settings will need to execute code on change, thus the getter/setter pairs
 	raw = {
 		// example value for dark mode setting
-		darkMode: false
+		darkMode: true
 	};
 
 	// example setter/getter for dark mode setting
@@ -17,12 +47,12 @@ class Settings {
 		} else {
 			document.body.classList.remove('dark');
 		};
+		this.save();
 	};
 };
 
 class Network {
 	online = Boolean();
-	OfflineJS = Offline;
 	#checkingConnection() {
 		// this will be used later, to display the connection status on the taskbar.
 	};
