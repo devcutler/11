@@ -30,6 +30,9 @@ The last time I tried to make something like this ([available here](https://gith
 - [ ] Protocol management
 - [x] Network
 - [x] Audio manager
+- [ ] Speech
+	- [ ] Synthesis
+	- [ ] Recognition
 - [x] Wallpapers
 - [x] Acrylic ([mostly.](https://docs.microsoft.com/en-us/windows/apps/design/style/acrylic))
 - [ ] System settings
