@@ -145,5 +145,9 @@ class System {
 	settings = new Settings;
 	network = new Network;
 	audio = new AudioManager;
-	path = Filer.path;
+	modules = {
+		path: Filer.path,
+		Buffer: Filer.Buffer,
+		Offline: createOfflineModule()
+	};
 };
