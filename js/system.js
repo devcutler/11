@@ -31,12 +31,21 @@ class Settings {
 	};
 	// this will store all the settings in this object
 	// however, some settings will need to execute code on change, thus the getter/setter pairs
-	raw = {
-		// example value for dark mode setting
-		darkMode: true
-	};
+	raw = {};
 
 	// example setter/getter for dark mode setting
+	get darkMode() {
+		return this.raw.darkMode;
+	};
+	set darkMode(value) {
+		this.raw.darkMode = value;
+		if (this.darkMode) {
+			document.body.classList.add('dark');
+		} else {
+			document.body.classList.remove('dark');
+		};
+		this.save();
+	};
 	get darkMode() {
 		return this.raw.darkMode;
 	};
@@ -56,7 +65,7 @@ class Network {
 	#checkingConnection() {
 		// this will be used later, to display the connection status on the taskbar.
 	};
-	constructor() {
+	constructor(Offline) {
 		Offline.options = {
 			checkOnLoad: true,
 			interceptRequests: true,
@@ -143,11 +152,11 @@ class Network {
 class System {
 	navigator = window.navigator;
 	settings = new Settings;
-	network = new Network;
 	audio = new AudioManager;
 	modules = {
 		path: Filer.path,
 		Buffer: Filer.Buffer,
 		Offline: createOfflineModule()
 	};
+	network = new Network(this.modules.Offline);
 };

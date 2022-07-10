@@ -8,7 +8,7 @@ The last time I tried to make something like this ([available here](https://gith
 
 ### TODO:
 - [ ] Login
-- [ ] Window manager
+- [x] App Windows
 - [ ] Taskbar
 	- [ ] Apps
 		- [ ] Button API
@@ -35,7 +35,7 @@ The last time I tried to make something like this ([available here](https://gith
 	- [ ] Recognition
 - [x] Wallpapers
 - [x] Acrylic ([mostly.](https://docs.microsoft.com/en-us/windows/apps/design/style/acrylic))
-- [ ] System settings
+- [x] System settings
 - [ ] "Native apps"
 	- [ ] Terminal emulator ([Xterm.js](https://xtermjs.org/))
 	- [ ] File explorer
@@ -47,13 +47,17 @@ The last time I tried to make something like this ([available here](https://gith
 - [ ] First-time setup
 
 ### Copyright statement
-<sup>
 I do not own, claim, or have any type of hold over Microsoft's copyrights. They own everything related to Windows 11, including but not limited to logos, icons, and design principles. I aim solely to create this project as a proof-of-concept, not to claim ownership over any copyrights. The LICENSE file applies only to any original code I create myself or use from other public-domain or non-restrictive sources.
 
 If you have a copyright issue with any of the contents of this repository, send me an email [arynthernium@gmail.com](mailto:arynthernium@gmail.com)
-</sup>
 
 ### Open-source
 - Filer (https://filer.js.org/)
 - OfflineJS (https://www.npmjs.com/package/offline-js)
-- css.gg (https://css.gg)
+
+### Resources
+These are resources that Microsoft uses in Windows 11 that I am using in this project to best replicate the Windows 11 experience. These are official and I do not claim any sort of copyright hold over them. They are solely Microsoft's.
+- Fonts
+	- [Segoe UI](https://docs.microsoft.com/en-us/typography/font-list/segoe-ui)
+	- [Fluent UI System Icons](https://github.com/microsoft/fluentui-system-icons)
+- [Wallpapers](https://drive.google.com/drive/folders/1JgF9H97Xn8MojslgF4LPXSlbLLfK2Ekn)
