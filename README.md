@@ -28,7 +28,7 @@ The last time I tried to make something like this ([available here](https://gith
 - [x] File system ([Filer](https://github.com/filerjs/filer))
 - [x] Segoe UI font
 - [ ] Protocol management
-- [x] Network
+- [ ] Network
 - [x] Audio manager
 - [ ] Speech
 	- [ ] Synthesis
