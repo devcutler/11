@@ -53,7 +53,6 @@ If you have a copyright issue with any of the contents of this repository, send 
 
 ### Open-source
 - Filer (https://filer.js.org/)
-- OfflineJS (https://www.npmjs.com/package/offline-js)
 
 ### Resources
 These are resources that Microsoft uses in Windows 11 that I am using in this project to best replicate the Windows 11 experience. These are official and I do not claim any sort of copyright hold over them. They are solely Microsoft's.
