@@ -42,7 +42,7 @@ The last time I tried to make something like this ([available here](https://gith
 	- [ ] Notepad
 	- [ ] Settings
 	- [ ] Media player
-	- [ ] Code editor ([github1s](https://github1s.com/))
+	- [ ] Code editor ([monaco](https://github.com/microsoft/monaco-editor))
 	- [ ] Rich text editor ([editor.js](https://editorjs.io/))
 - [ ] First-time setup
 
