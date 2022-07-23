@@ -1,27 +1,20 @@
 window.SYSTEM = new System;
-window.SYSTEM.fs = new Filer.FileSystem();
+window.SYSTEM.fs = new Filer.FileSystem().promises;
 
-window.SYSTEM.fs.exists('/.config/', function (exists) {
-	if (exists) {
-		window.SYSTEM.fs.exists('/.config/settings.json', function (exists) {
-			if (exists) {
-				window.SYSTEM.settings.load();
-			} else {
-				window.SYSTEM.fs.writeFile('/.config/settings.json', JSON.stringify(Settings.defaultConfig), function (err) {
-					if (err) throw err;
-				});
-			};
-		});
-	} else {
-		window.SYSTEM.fs.mkdir('/.config/', function (err) {
-			if (err) throw err;
-			window.SYSTEM.fs.writeFile('/.config/settings.json', Settings.defaultConfig, function (err) {
-				if (err) throw err;
-				window.SYSTEM.fs.readFile('/.config/settings.json', 'utf-8', function (err, data) {
-					if (err) throw err;
-					window.SYSTEM.settings.load();
-				});
-			});
-		});
-	};
+Object.defineProperty(window.SYSTEM.fs, 'ready', {
+	get() {
+		return this.a + 1;
+	},
+	set(value) {
+		window.SYSTEM.fs.onread;
+	}
 });
+
+window.SYSTEM.settings.load();
+
+window.onload = () => {
+	window.SYSTEM.settings.listen('darkMode', function listenForDarkModeChange(value) {
+		value ? document.body.classList.add('dark') : document.body.classList.remove('dark');
+	});
+	window.SYSTEM.settings.darkMode = window.SYSTEM.settings.darkMode !== undefined ? window.SYSTEM.settings.darkMode : false; // doesn't register event when initializing settings
+};

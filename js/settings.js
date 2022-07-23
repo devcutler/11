@@ -16,23 +16,38 @@ class Settings extends EventTarget {
 		Object.defineProperty(this, 'save', {
 			value: function save() {
 				window.SYSTEM.fs.writeFile('/.config/settings.json', JSON.stringify(this))
-					.then((err) => {
-						if (err) throw err;
-					});
+					.catch((err => {
+						if (err.code === 'ENOENT') {
+							window.SYSTEM.fs.writeFile('/.config/settings.json', '{}')
+								.then((() => {
+									this.load();
+								}).bind(this));
+						};
+					}).bind(this));
 			}.bind(this),
 			configurable: false,
 			enumerable: false,
 			writable: false
 		});
 		Object.defineProperty(this, 'load', {
-			value: function save() {
+			value: function load() {
 				window.SYSTEM.fs.readFile('/.config/settings.json', 'utf-8')
-					.then((data) => {
+					.then(((data) => {
 						const newsettings = JSON.parse(data.toString());
 						Object.keys(newsettings).forEach(key => {
 							this[key] = newsettings[key];
 						});
-					});
+					}).bind(this))
+					.catch((err => {
+						if (err.code === 'ENOENT') {
+							window.SYSTEM.fs.mkdir('/.config').then(() => {
+								window.SYSTEM.fs.writeFile('/.config/settings.json', '{}')
+									.then((() => {
+										this.load();
+									}).bind(this));
+							});
+						};
+					}).bind(this));
 			}.bind(this),
 			configurable: false,
 			enumerable: false,
