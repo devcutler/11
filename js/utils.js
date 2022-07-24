@@ -70,3 +70,14 @@ function dragElement(elmnt) {
 		document.onmousemove = null;
 	}
 }
+
+/**
+ * Mirror a number across a midpoint.
+ * @param {Number} num The input to mirror.
+ * @param {Number} min The minimum number.
+ * @param {Number} max The maximum number.
+ * @returns {Number}
+ */
+function mirror(num, min, max) {
+	return Math.abs(num - max - min);
+};
