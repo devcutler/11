@@ -1,14 +1,15 @@
-# win11
+# 11
 
-A Windows 11 style experience built with HTML+CSS+JS.
+### A Windows 11 style experience built with HTML+CSS+JS.
+
+## Abstract
 
 The idea is to make this as fully-functional and extensible (i.e. adding openable "apps" through iframes and things like that) as possible. I also want to make fully functioning "system-like" controls e.g. global volume controls, brightness, settings, etc. I also want to have the ability to create/read/write files, which will be stored permanently with BrowserFS.
 
 The last time I tried to make something like this ([available here](https://github.com/arynthernium/winUI)), I had several inconsistencies and things I wanted to do differently. I also had no real direction for where I wanted to go with the project, and didn't have any idea what things I wanted to do.
 
-### TODO:
+## TODO
 - [ ] Login
-- [x] App Windows
 - [ ] Taskbar
 	- [ ] Apps
 		- [ ] Button API
@@ -33,10 +34,12 @@ The last time I tried to make something like this ([available here](https://gith
 - [ ] Speech
 	- [ ] Synthesis
 	- [ ] Recognition
-- [x] Wallpapers
+- [ ] Wallpapers (custom as well)
 - [x] Acrylic ([mostly.](https://docs.microsoft.com/en-us/windows/apps/design/style/acrylic))
+- [ ] Mica ([mostly.](https://docs.microsoft.com/en-us/windows/apps/design/style/mica))
 - [x] System settings
-- [ ] "Native apps"
+- [x] App Windows
+- [ ] "Native" apps
 	- [ ] Terminal emulator ([Xterm.js](https://xtermjs.org/))
 	- [ ] File explorer
 	- [ ] Notepad
