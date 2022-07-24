@@ -15,4 +15,9 @@ class AudioManager {
 		this._audionodes.push(element);
 		element.volume = this._volume;
 	};
+	constructor() {
+		document.arrive('audio,video', (element) => {
+			this.manage(element);
+		});
+	};
 };
