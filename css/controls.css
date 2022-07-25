@@ -1,0 +1,105 @@
+/*
+	General styles
+*/
+
+:root {
+	/* This is the default Windows 11 accent color. Can be overwritten in settings. */
+	--accent-color: #0078D7;
+	accent-color: var(--accent-color);
+}
+
+body {
+	--controls-body-color: #f9f9f9;
+	--controls-inner-color: #1a1a1a;
+}
+
+body.dark {
+	--controls-body-color: #1a1a1a;
+	--controls-inner-color: #f9f9f9;
+}
+
+.controls-spacing-inline {
+	display: inline;
+}
+
+.controls-spacing-inline-block {
+	display: inline-block;
+}
+
+.controls-spacing-block {
+	display: block;
+}
+
+/*
+	Button styles
+*/
+
+.controls-button {
+	border-radius: 4px;
+	padding: 8px;
+	background: var(--controls-body-color);
+	color: var(--controls-inner-color);
+	text-decoration: none;
+	transition: 200ms;
+	outline: none;
+	border: none;
+	width: 100%;
+	user-select: none;
+}
+
+.controls-button:hover {
+	filter: brightness(90%);
+}
+
+body.dark .controls-button:hover {
+	filter: brightness(80%);
+}
+
+.controls-button:active {
+	filter: brightness(80%) saturate(80%);
+}
+
+/*
+	Slider styles, NO FIREFOX/IE COMPATIBILITY (because I'm not going to bother)
+*/
+
+input[type=range].controls-slider {
+	width: 100%;
+	margin: 8px 0;
+	background-color: transparent;
+	-webkit-appearance: none;
+}
+
+input[type=range].controls-slider:focus {
+	outline: none;
+}
+
+input[type=range].controls-slider::-webkit-slider-runnable-track {
+	background: var(--accent-color);
+	border: none;
+	border-radius: 3px;
+	width: 100%;
+	height: 4px;
+	cursor: pointer;
+}
+
+input[type=range].controls-slider::-webkit-slider-thumb {
+	margin-top: -8px;
+	width: 20px;
+	height: 20px;
+	background: var(--accent-color);
+	border: 5px solid var(--controls-body-color);
+	border-radius: 50%;
+	cursor: pointer;
+	-webkit-appearance: none;
+	transition: 80ms;
+}
+
+input[type=range].controls-slider::-webkit-slider-thumb:hover {
+	border-width: 3px;
+	transition: 200ms;
+}
+
+input[type=range].controls-slider:focus::-webkit-slider-runnable-track {
+	background: var(--accent-color);
+}
