@@ -26,4 +26,5 @@ body.dark {
 	bottom: -10px;
 	backdrop-filter: blur(4px);
 	content: "";
+	z-index: -1;
 }
