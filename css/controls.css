@@ -18,23 +18,21 @@ body.dark {
 	--controls-inner-color: #f9f9f9;
 }
 
-.controls-spacing-inline {
-	display: inline;
-}
+/*
+	Row styles
+*/
 
-.controls-spacing-inline-block {
-	display: inline-block;
-}
-
-.controls-spacing-block {
-	display: block;
+flyout-row {
+	display: flex;
+	flex: 1 0 0;
+	margin: 4px;
 }
 
 /*
-	Button styles
+	Button styles, NO FIREFOX/IE COMPATIBILITY (because I'm not going to bother)
 */
 
-.controls-button {
+[is="controls-button"] {
 	border-radius: 4px;
 	padding: 8px;
 	background: var(--controls-body-color);
@@ -43,38 +41,58 @@ body.dark {
 	transition: 200ms;
 	outline: none;
 	border: none;
-	width: 100%;
+	min-width: 128px;
 	user-select: none;
+	display: inline-flex;
+	justify-content: center;
 }
 
-.controls-button:hover {
+[is="controls-button"][controls-button-type="icon"] {
+	min-width: unset;
+}
+
+[is="controls-button"]:hover {
 	filter: brightness(90%);
 }
 
-body.dark .controls-button:hover {
+body.dark [is="controls-button"]:hover {
 	filter: brightness(80%);
 }
 
-.controls-button:active {
+[is="controls-button"]:active {
 	filter: brightness(80%) saturate(80%);
+}
+
+[is="controls-button"][controls-alignment="inline"]+[is="controls-button"][controls-alignment="inline"] {
+	margin-left: 4px;
+}
+
+.controls-button-text {
+	display: inline;
+	align-self: center;
+}
+
+.controls-button-icon {
+	width: 24px;
+	height: 24px;
+	display: inline;
 }
 
 /*
 	Slider styles, NO FIREFOX/IE COMPATIBILITY (because I'm not going to bother)
 */
-
-input[type=range].controls-slider {
+[is="controls-slider"] {
 	width: 100%;
 	margin: 8px 0;
 	background-color: transparent;
 	-webkit-appearance: none;
 }
 
-input[type=range].controls-slider:focus {
+[is="controls-slider"]:focus {
 	outline: none;
 }
 
-input[type=range].controls-slider::-webkit-slider-runnable-track {
+[is="controls-slider"]::-webkit-slider-runnable-track {
 	background: var(--accent-color);
 	border: none;
 	border-radius: 3px;
@@ -83,7 +101,7 @@ input[type=range].controls-slider::-webkit-slider-runnable-track {
 	cursor: pointer;
 }
 
-input[type=range].controls-slider::-webkit-slider-thumb {
+[is="controls-slider"]::-webkit-slider-thumb {
 	margin-top: -8px;
 	width: 20px;
 	height: 20px;
@@ -95,11 +113,11 @@ input[type=range].controls-slider::-webkit-slider-thumb {
 	transition: 80ms;
 }
 
-input[type=range].controls-slider::-webkit-slider-thumb:hover {
+[is="controls-slider"]::-webkit-slider-thumb:hover {
 	border-width: 3px;
 	transition: 200ms;
 }
 
-input[type=range].controls-slider:focus::-webkit-slider-runnable-track {
+[is="controls-slider"]:focus::-webkit-slider-runnable-track {
 	background: var(--accent-color);
 }
