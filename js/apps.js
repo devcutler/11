@@ -11,6 +11,7 @@ class App extends HTMLElement {
 	#height = 600;
 	#title = 'Untitled Window';
 	#icon = window.Constants.Icons.Window.window;
+	#theme = 'dark';
 	get width() {
 		return this.#width;
 	};
@@ -38,6 +39,20 @@ class App extends HTMLElement {
 	set icon(value) {
 		this.#icon = value;
 		this.appicon.innerHTML = value ? (value.startsWith('<svg') ? value : '<img src="' + value + '">') : window.Constants.Icons.Window.window;
+	};
+	get theme() {
+		return this.#theme;
+	};
+	set theme(value) {
+		if (value === 'dark') {
+			this.appContentFrame.contentDocument.body.classList.add('dark');
+			return this.#theme = value;
+		} else if (value === 'light') {
+			this.appContentFrame.contentDocument.body.classList.remove('dark');
+			return this.#theme = value;
+		} else {
+			return new SyntaxError('Invalid theme name.');
+		};
 	};
 	appicon;
 	titlebar;
@@ -77,7 +92,7 @@ class App extends HTMLElement {
 
 		this.appContentFrame = createNode('iframe', { class: 'app-contentframe' });
 		this.appContentFrame.allow = 'fullscreen';
-		this.appContentFrame.srcdoc = srcdoc;
+		this.appContentFrame.srcdoc = srcdoc || '';
 
 		this.appendChild(this.appContentFrame);
 
@@ -107,6 +122,11 @@ class App extends HTMLElement {
 					this.style.display = 'flex';
 					document.getElementById('apps-container').appendChild(this);
 					this.title = this?.appContentFrame?.contentDocument?.title || this.#title;
+
+					this.appContentFrame.addEventListener('load', (() => {
+						this.appContentFrame.contentDocument.head.appendChild(createNode('link', { rel: 'stylesheet', href: 'css/appui.css' }));
+						this.appContentFrame.contentDocument.body.classList.add('dark');
+					}).bind(this));
 				};
 				resolve(this);
 			} catch (err) {
