@@ -6,6 +6,10 @@
 	height: 48px;
 }
 
+:not(body.acrylicEnabled) #taskbar {
+	background-color: var(--acrylic-background-color);
+}
+
 #taskbarapps {
 	position: absolute;
 	height: 100%;

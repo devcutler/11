@@ -1,4 +1,5 @@
 body {
+	--acrylic-color: black;
 	--acrylic-background-color: #F7F7F7CC;
 	--acrylic-border-color: #e5e5e5;
 }
@@ -9,14 +10,14 @@ body.dark {
 	--acrylic-border-color: #1a1a1a1a;
 }
 
-.acrylic {
+body.acrylicEnabled .acrylic {
 	color: var(--acrylic-color);
 	background-color: var(--acrylic-background-color);
 	border-color: var(--acrylic-border-color);
 	overflow: hidden;
 }
 
-.acrylic:before {
+body.acrylicEnabled .acrylic:before {
 	background-image: url('noise.png');
 	background-repeat: repeat;
 	position: absolute;
@@ -24,7 +25,7 @@ body.dark {
 	left: -10px;
 	right: -10px;
 	bottom: -10px;
-	backdrop-filter: blur(4px);
+	backdrop-filter: url("#acrylicBlurFilter");
 	content: "";
 	z-index: -1;
 }

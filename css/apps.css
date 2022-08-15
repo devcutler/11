@@ -27,7 +27,6 @@ app-window:focus {
 }
 
 .app-window-titlebar {
-	background-color: var(--app-window-titlebar-color-main);
 	color: var(--app-window-titlebar-color-controls);
 	height: 30px;
 	border-radius: 8px 8px 0px 0px;

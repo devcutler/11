@@ -80,7 +80,7 @@ class App extends HTMLElement {
 		this.titlebar = createNode('div', { class: 'app-window-titlebar' });
 
 		this.appicon = createNode('div', { class: 'app-window-titlebar-icon' });
-		this.appicon.innerHTML = this.icon;
+		this.icon = icon;
 
 		this.apptitle = createNode('p', { class: 'app-window-titlebar-title' }, this.title);
 		this.titlebar.appendChild(this.appicon);
@@ -128,6 +128,7 @@ class App extends HTMLElement {
 		close.onclick = this.quit.bind(this);
 
 		dragElement(this);
+		this.classList.add('acrylic');
 		this.style.display = 'flex';
 		this.shadow = true;
 		this.#updateReady(true);
@@ -148,7 +149,7 @@ class App extends HTMLElement {
 					this.title = this?.appContentFrame?.contentDocument?.title || this.#title;
 
 					this.appContentFrame.addEventListener('load', (() => {
-						this.appContentFrame.contentDocument.head.appendChild(createNode('link', { rel: 'stylesheet', href: 'css/appui.css' }));
+						this.appContentFrame.contentDocument.head.appendChild(createNode('link', { rel: 'stylesheet', href: window.location.toString() + 'css/appui.css' }));
 						this.appContentFrame.contentDocument.body.classList.add('dark');
 						const iconsrc = this?.appContentFrame?.contentDocument?.querySelector('link[rel="icon"]')?.getAttribute('href');
 						if (iconsrc) this.icon = iconsrc;
