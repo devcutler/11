@@ -37,8 +37,21 @@ class App extends HTMLElement {
 		return this.#icon;
 	};
 	set icon(value) {
-		this.#icon = value;
-		this.appicon.innerHTML = value ? (value.startsWith('<svg') ? value : '<img src="' + value + '">') : window.Constants.Icons.Window.window;
+		if (value) {
+			if (value.startsWith('<svg')) {
+				const svgnode = window.SYSTEM.DOMPARSER.parseFromString(value, 'image/svg+xml').documentElement;
+				this.appicon.replaceChildren(svgnode);
+				this.#icon = svgnode;
+			} else {
+				const imgnode = createNode('img', { src: value });
+				this.appicon.replaceChildren(imgnode);
+				this.#icon = imgnode;
+			};
+		} else if (value === null || value === undefined) {
+			const svgnode = window.SYSTEM.DOMPARSER.parseFromString(window.Constants.Icons.Window.window, 'image/svg+xml').documentElement;
+			this.appicon.replaceChildren(svgnode);
+			this.#icon = svgnode;
+		};
 	};
 	get theme() {
 		return this.#theme;
@@ -58,7 +71,7 @@ class App extends HTMLElement {
 	titlebar;
 	appcontrols;
 	appContentFrame;
-	constructor(srcdoc) {
+	constructor(srcORsrcdoc, title, icon) {
 		super();
 
 		this.style.height = this.#height;
@@ -92,12 +105,23 @@ class App extends HTMLElement {
 
 		this.appContentFrame = createNode('iframe', { class: 'app-contentframe' });
 		this.appContentFrame.allow = 'fullscreen';
-		this.appContentFrame.srcdoc = srcdoc || '';
+
+		if (srcORsrcdoc === '' || srcORsrcdoc === null || srcORsrcdoc === undefined) {
+			srcORsrcdoc = 'https://aryn.dev/placeholder';
+		};
+		try {
+			const url = new URL(srcORsrcdoc);
+			this.appContentFrame.setAttribute('src', url.toString());
+		} catch (err) {
+			if (err instanceof TypeError) {
+				this.appContentFrame.setAttribute('srcdoc', srcORsrcdoc);
+			} else throw err;
+		};
 
 		this.appendChild(this.appContentFrame);
 
-		const iconsrc = this?.appContentFrame?.contentDocument?.querySelector('link[rel="icon"]')?.getAttribute('href');
-
+		if (title !== undefined) this.title = title;
+		if (icon !== undefined) this.icon = icon;
 
 		minimise.onclick = this.hide.bind(this);
 		maximise.onclick = this.fullscreen.bind(this);
@@ -126,6 +150,8 @@ class App extends HTMLElement {
 					this.appContentFrame.addEventListener('load', (() => {
 						this.appContentFrame.contentDocument.head.appendChild(createNode('link', { rel: 'stylesheet', href: 'css/appui.css' }));
 						this.appContentFrame.contentDocument.body.classList.add('dark');
+						const iconsrc = this?.appContentFrame?.contentDocument?.querySelector('link[rel="icon"]')?.getAttribute('href');
+						if (iconsrc) this.icon = iconsrc;
 					}).bind(this));
 				};
 				resolve(this);
@@ -158,12 +184,9 @@ class App extends HTMLElement {
 	async quit(code) {
 		return new Promise(((resolve, reject) => {
 			try {
-				const response = this.appContentFrame.contentWindow.dispatchEvent('beforeunload');
-				if (response) {
-					resolve(true);
-				} else {
-					reject(false);
-				};
+				this.appContentFrame.remove();
+				this.remove();
+				resolve(true);
 			} catch (err) {
 				reject(err);
 			};

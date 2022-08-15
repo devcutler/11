@@ -6,4 +6,5 @@ class System {
 		path: Filer.path,
 		Buffer: Filer.Buffer
 	};
+	DOMPARSER = new DOMParser();
 };
