@@ -1,10 +1,11 @@
 class System {
 	navigator = window.navigator;
-	settings = new Settings();
+	settings = new Settings;
 	audio = new AudioManager;
 	modules = {
 		path: Filer.path,
-		Buffer: Filer.Buffer
+		Buffer: Filer.Buffer,
+		UUID: window.UUID
 	};
 	DOMPARSER = new DOMParser();
 };
