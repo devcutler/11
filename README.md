@@ -41,7 +41,7 @@ Issues, PRs, discussion, and ideas are welcome.
 - [ ] Mica ([mostly.](https://docs.microsoft.com/en-us/windows/apps/design/style/mica))
 - [x] System settings
 - [x] App Windows
-- [ ] "Native" apps
+- [x] "Native" apps
 	- [ ] Terminal emulator ([Xterm.js](https://xtermjs.org/))
 	- [ ] File explorer
 	- [ ] Notepad
@@ -59,6 +59,7 @@ If you have a copyright issue with any of the contents of this repository, send 
 ## Open-source
 - [Filer](https://filer.js.org/)
 - [arrive.js](https://github.com/uzairfarooq/arrive)
+- [UUID.js](https://github.com/LiosK/UUID.js)
 
 ## Resources
 These are resources that Microsoft uses in Windows 11 that I am using in this project to best replicate the Windows 11 experience. These are official and I do not claim any sort of copyright hold over them. They are solely Microsoft's.

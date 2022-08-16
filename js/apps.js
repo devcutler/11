@@ -71,8 +71,10 @@ class App extends HTMLElement {
 	titlebar;
 	appcontrols;
 	appContentFrame;
-	constructor(srcORsrcdoc, title, icon) {
+	constructor(id, srcORsrcdoc, title, icon) {
 		super();
+
+		this.id = id;
 
 		this.style.height = this.#height;
 		this.style.width = this.#width;
@@ -183,15 +185,7 @@ class App extends HTMLElement {
 	 * @returns {Promise}
 	 */
 	async quit(code) {
-		return new Promise(((resolve, reject) => {
-			try {
-				this.appContentFrame.remove();
-				this.remove();
-				resolve(true);
-			} catch (err) {
-				reject(err);
-			};
-		}).bind(this));
+		return window.SYSTEM.appmanager.close(this.id);
 	};
 };
 

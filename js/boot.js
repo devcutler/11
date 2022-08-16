@@ -1,5 +1,11 @@
 window.SYSTEM = new System;
 window.SYSTEM.fs = new Filer.FileSystem().promises;
+window.SYSTEM.appmanager = new AppManager;
+window.SYSTEM.appmanager.init()
+	.then(() => {
+		window.SYSTEM.appmanager.populateRegistry();
+	})
+	.catch(console.error);
 
 window.SYSTEM.settings.load();
 
