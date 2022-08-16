@@ -31,7 +31,7 @@ window.onload = () => {
 			document.body.style.setProperty('--wallpaper', 'url("' + url.toString() + '")');
 		} catch (err) {
 			if (err instanceof TypeError) {
-				document.body.style.setProperty('--wallpaper', 'url("' + '../images/wp' + (window.SYSTEM.settings.darkMode ? 'dark' : 'light') + '.jpg' + '")');
+				document.body.style.removeProperty('--wallpaper');
 			} else throw err;
 		};
 	});
