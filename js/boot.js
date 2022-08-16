@@ -24,6 +24,7 @@ window.onload = () => {
 	window.SYSTEM.settings.listen('acrylicEnabled', function listenForAcrylicEnabledChange(value) {
 		value ? document.body.classList.add('acrylicEnabled') : document.body.classList.remove('acrylicEnabled');
 	});
+	window.SYSTEM.settings.acrylicEnabled = window.SYSTEM.settings.acrylicEnabled || true;
 
 	window.SYSTEM.settings.listen('desktopBackgroundImage', function listenForDesktopBackgroundImageChange(value) {
 		try {
