@@ -74,4 +74,6 @@ window.onload = () => {
 		};
 	});
 	window.SYSTEM.settings.desktopBackgroundRepeat = window.SYSTEM.settings.desktopBackgroundRepeat;
+
+	document.querySelectorAll('controls-flyout').forEach(flyout => flyout.close());
 };
