@@ -81,3 +81,27 @@ function dragElement(elmnt) {
 function mirror(num, min, max) {
 	return Math.abs(num - max - min);
 };
+
+/**
+ * Checks if a folder exists, and if it does not, creates one.
+ * @param {string} path The path to check or create.
+ * @param {Filer.Filesystem} fs The filesystem to use. Matches NodeJS' Filesystem API.
+ * @returns {Promise<Filer.Errors.ENOENT|string>} Resolves after verifying the existence of, or creating, a folder.
+ */
+async function folderCreateOrExists(path, fs = window.SYSTEM.fs) {
+	return new Promise((resolve, reject) => {
+		fs.stat(path)
+			.then(result => {
+				resolve(result);
+			})
+			.catch(err => {
+				if (err.code === 'ENOENT') {
+					fs.mkdir(path)
+						.then(() => {
+							fs.stat(path).then(resolve);
+						})
+						.catch(reject);
+				} else throw err;
+			});
+	});
+};
