@@ -1,0 +1,7 @@
+body {
+	--wallpaper: url('../images/wplight.jpg');
+}
+
+body.dark {
+	--wallpaper: url('../images/wpdark.jpg');
+}
