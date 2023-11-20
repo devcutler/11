@@ -1,0 +1,38 @@
+#taskbar {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 48px;
+}
+
+:not(body.acrylicEnabled) #taskbar {
+	background-color: var(--acrylic-background-color);
+}
+
+#taskbarapps {
+	position: absolute;
+	height: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+}
+
+.taskbaricon {
+	aspect-ratio: 1/1;
+	max-width: calc(100% - 8px - 8px);
+	max-height: calc(100% - 8px - 8px);
+	padding: 5px;
+	margin: 3px;
+	transition: 300ms;
+	border-radius: 6px;
+}
+
+.taskbaricon:hover {
+	background-color: #ffffff22;
+}
+
+.taskbaricon:active {
+	transform: scale(0.9);
+	padding: 7px;
+}

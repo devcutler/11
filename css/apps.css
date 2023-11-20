@@ -1,0 +1,92 @@
+body {
+	--app-window-titlebar-color-main: #f9f9f9;
+	--app-window-titlebar-color-controls: #1a1a1a;
+	--app-window-color-main: #f3f3f3;
+}
+
+body.dark {
+	--app-window-titlebar-color-main: #202020;
+	--app-window-titlebar-color-controls: #f9f9f9;
+	--app-window-color-main: #272727;
+}
+
+app-window {
+	position: absolute;
+	border-radius: 8px;
+	border: 1px solid var(--app-window-color-border);
+	background-color: var(--app-window-color-main);
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-content: stretch;
+	align-items: stretch;
+}
+
+app-window:focus {
+	box-shadow: 0px 0px 23px 3px rgba(0, 0, 0, 0.50);
+}
+
+.app-window-titlebar {
+	color: var(--app-window-titlebar-color-controls);
+	height: 30px;
+	border-radius: 8px 8px 0px 0px;
+	display: flex;
+	align-items: stretch;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: small;
+	flex: 0 0 auto;
+}
+
+.app-window-titlebar-icon {
+	color: var(--app-window-titlebar-color-controls);
+	border-radius: 8px 0px 0px 0px;
+	aspect-ratio: 1/1;
+	margin: 5px;
+}
+
+.app-window-titlebar-icon>* {
+	height: 100%;
+	width: 100%;
+}
+
+.app-window-titlebar-title {
+	flex: 1 1 auto;
+	user-select: none;
+	align-self: center;
+}
+
+.app-window-titlebar-controls {
+	flex: 0 0 144px;
+	display: flex;
+}
+
+.app-window-titlebar-controls-minimise, .app-window-titlebar-controls-maximise, .app-window-titlebar-controls-close {
+	flex: 1 0 0;
+	border: none;
+	padding: 0px;
+	margin: 0px;
+	transition: 83ms;
+	background: none;
+	color: var(--app-window-titlebar-color-controls);
+}
+
+.app-window-titlebar-controls-minimise>svg, .app-window-titlebar-controls-maximise>svg, .app-window-titlebar-controls-close>svg {
+	height: 16px;
+	width: 16px;
+}
+
+.app-window-titlebar-controls-close {
+	border-radius: 0px 8px 0px 0px;
+}
+
+.app-window-titlebar-controls-minimise:hover, .app-window-titlebar-controls-maximise:hover {
+	background-color: #2f2c2a;
+}
+
+.app-window-titlebar-controls-close:hover {
+	background-color: #c42b1c;
+}
+
+.app-contentframe {
+	flex: 1 1 0;
+}

@@ -1,3 +1,15 @@
+<<<<<<< HEAD
 @import 'vars.css';
 @import 'base.css';
 @import 'reset.css';
+=======
+@import 'base.css';
+@import 'acrylic.css';
+@import 'screen.css';
+@import 'controls.css';
+@import 'flyouts.css';
+@import 'taskbar.css';
+@import 'apps.css';
+@import 'reset.css';
+@import '../resources/fonts.css';
+>>>>>>> 0ae141ad290cf969d93e9f1f5afdc0aaca3af575

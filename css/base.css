@@ -1,5 +1,20 @@
 body {
+<<<<<<< HEAD
 	background-image: var(--wallpaper);
 	background-size: cover;
 	background-position: center;
+=======
+	--wallpaper: url('../images/wplight.jpg');
+}
+
+body.dark {
+	--wallpaper: url('../images/wpdark.jpg');
+}
+
+body {
+	background-image: var(--wallpaper);
+	background-size: cover;
+	background-position: center;
+	overflow: hidden;
+>>>>>>> 0ae141ad290cf969d93e9f1f5afdc0aaca3af575
 }

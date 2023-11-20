@@ -1,0 +1,36 @@
+controls-flyout {
+	transition: all 200ms ease-out;
+	position: absolute;
+	margin: 8px;
+	border-radius: 8px;
+	display: block;
+	z-index: 1;
+}
+
+controls-flyout[pos=centerX] {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+controls-flyout[pos=centerY] {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+controls-flyout[pos=top] {
+	top: 0px;
+}
+
+controls-flyout[pos=bottom] {
+	bottom: 48px;
+}
+
+controls-flyout[pos=left] {
+	left: 0px;
+}
+
+controls-flyout[pos=right] {
+	right: 0px;
+}
